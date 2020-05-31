@@ -16,14 +16,14 @@ ActiveRecord::Base.connection.tables.each do |t|
 end
 
 names = %w(general paris react)
-nicknames = %w(TImi ssaunier Harrie listrado arthur)
+nicknames = %w(Timi ssaunier Harrie listrado arthur)
 
 channels = names.map do |name|
   Channel.find_or_create_by(name: name)
 end
 
 users = nicknames.map do |nickname|
-  User.create(email: "#{nickname.downcase}@lewagon.com", nickname: nickname, password: "123456")
+  User.create(email: "#{nickname.downcase}@gmail.com", nickname: nickname, password: "testtest")
 end
 
 20.times do
