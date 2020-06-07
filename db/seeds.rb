@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
 Message.destroy_all
 User.destroy_all
@@ -16,14 +15,14 @@ ActiveRecord::Base.connection.tables.each do |t|
 end
 
 names = %w(general paris react)
-nicknames = %w(Timi ssaunier Harrie listrado arthur)
+nicknames = %w(Papillard ssaunier monsieurpaillard harrie Eschults)
 
 channels = names.map do |name|
   Channel.find_or_create_by(name: name)
 end
 
 users = nicknames.map do |nickname|
-  User.create(email: "#{nickname.downcase}@gmail.com", nickname: nickname, password: "testtest")
+  User.create(email: "#{nickname.downcase}@lewagon.com", nickname: nickname, password: "testtest")
 end
 
 20.times do
